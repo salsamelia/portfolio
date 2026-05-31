@@ -265,3 +265,62 @@ if (ring && dot && matchMedia('(pointer:fine)').matches) {
     obs.observe(expOverlay, { childList: true, subtree: true });
   }
 })();
+/* ================================================================
+   HOME SCROLL ENHANCEMENTS
+   - Active nav highlight on scroll
+   - Scroll progress bar
+================================================================ */
+(function() {
+  // Only run on home page
+  if (!document.querySelector('.pg-home')) return;
+
+  /* ── Inject scroll progress bar ── */
+  const bar = document.createElement('div');
+  bar.id = 'scroll-progress';
+  document.body.appendChild(bar);
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = pct + '%';
+  }, { passive: true });
+
+  /* ── Active nav highlight on scroll ── */
+  const sections = ['hero', 'about', 'experiences', 'contact'];
+  const navLinks = document.querySelectorAll('.nl[data-section], .mm[data-section]');
+
+  // Hero section is the main <main> element
+  const getSectionTop = (id) => {
+    if (id === 'hero') return 0;
+    const el = document.getElementById(id);
+    return el ? el.offsetTop - 120 : 0;
+  };
+
+  function updateActive() {
+    const scrollY = window.scrollY;
+    let current = 'hero';
+
+    sections.forEach(id => {
+      if (scrollY >= getSectionTop(id)) current = id;
+    });
+
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.dataset.section === current);
+    });
+  }
+
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive(); // run once on load
+
+  /* ── Close mobile menu on anchor link click ── */
+  document.querySelectorAll('.mm[data-section]').forEach(link => {
+    link.addEventListener('click', () => {
+      const menu = document.getElementById('mob-menu');
+      const hbg  = document.getElementById('hbg');
+      if (menu) menu.classList.remove('open');
+      if (hbg)  hbg.classList.remove('open');
+    });
+  });
+
+})();
