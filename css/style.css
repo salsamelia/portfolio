@@ -8,11 +8,11 @@
 :root {
   --bg:       #0a0908;
   --bg2:      #111009;
-  --fg:       #ede8de;
-  --fg2:      #b5b0a5;
+  --fg:       #f0ece0;
+  --fg2:      #cec9be;
   --accent:   #c8a96e;
   --accent-h: #e0c088;
-  --muted:    #5a5752;
+  --muted:    #6e6a62;
   --line:     rgba(237,232,222,.09);
   --card:     rgba(237,232,222,.04);
   --card-bd:  rgba(237,232,222,.1);
@@ -1137,4 +1137,115 @@ body::after{
   z-index: 9999;
   transition: width .1s linear;
   pointer-events: none;
+}
+/* ================================================================
+   READABILITY PATCH — font size & contrast upgrade
+================================================================ */
+
+/* Navbar links */
+.nl {
+  font-size: .72rem;
+}
+.mm {
+  font-size: .68rem;
+}
+
+/* Eyebrow */
+.eyebrow {
+  font-size: .68rem;
+}
+
+/* Hero description */
+.hero-desc {
+  font-size: 1rem;
+  color: var(--fg2);
+}
+
+/* Status badge */
+.status-badge {
+  font-size: .78rem;
+}
+
+/* Button text */
+.btn-txt {
+  font-size: .72rem;
+}
+
+/* Timeline preview on home */
+.hp-tl-role {
+  font-size: 1.08rem;
+}
+.hp-tl-org {
+  font-size: .65rem;
+}
+.hp-tl-desc {
+  font-size: .92rem;
+  color: var(--fg2);
+}
+.hp-tl-date {
+  font-size: .62rem;
+}
+
+/* About preview bio */
+.hp-about-bio {
+  font-size: 1rem;
+}
+
+/* Skill name in home preview */
+.hp-skill-name {
+  font-size: .68rem;
+}
+
+/* Contact preview */
+.hp-contact-sub {
+  font-size: .95rem;
+}
+.hp-clink-val {
+  font-size: .88rem;
+}
+.hp-clink-label {
+  font-size: .6rem;
+}
+
+/* Badges */
+.badge {
+  font-size: .65rem;
+}
+.etag {
+  font-size: .62rem;
+}
+
+/* Experience cards */
+.etitle {
+  font-size: 1.05rem;
+}
+.eorg {
+  font-size: .65rem;
+}
+.eperiod {
+  font-size: .62rem;
+}
+.e-bullets li {
+  font-size: .84rem;
+}
+
+/* Modal */
+.modal-title {
+  font-size: 1.6rem;
+}
+.modal-list li {
+  font-size: .92rem;
+}
+.modal-desc {
+  font-size: .92rem;
+}
+
+/* Footer */
+.ftr-txt {
+  font-size: .65rem;
+}
+
+/* Ticker */
+.ticker {
+  font-size: .62rem;
 }
