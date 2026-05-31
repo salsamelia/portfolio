@@ -933,15 +933,19 @@ body::after{
 
 .hp-more {
   font-family: 'DM Mono', monospace;
-  font-size: .58rem;
-  letter-spacing: .14em;
-  color: var(--muted);
-  border-bottom: 1px solid var(--muted);
-  padding-bottom: 2px;
+  font-size: .68rem;
+  letter-spacing: .12em;
+  color: var(--accent);
+  border: 1px solid rgba(200,169,110,.35);
+  padding: 7px 16px;
+  border-radius: 100px;
   white-space: nowrap;
-  transition: color .25s, border-color .25s;
+  transition: color .25s, border-color .25s, background .25s;
 }
-.hp-more:hover { color: var(--accent); border-color: var(--accent); }
+.hp-more:hover {
+  background: rgba(200,169,110,.1);
+  border-color: var(--accent);
+}
 
 /* ── About preview ── */
 .hp-about-grid {
