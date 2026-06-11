@@ -1254,3 +1254,49 @@ body::after{
 .ticker {
   font-size: .62rem;
 }
+/* ── Modal PDF Button ── */
+.modal-pdf-btn {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .7rem 1rem;
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 6px;
+  background: rgba(255,255,255,.03);
+  text-decoration: none;
+  transition: background .2s, border-color .2s;
+  margin-top: .5rem;
+}
+.modal-pdf-btn:hover {
+  background: rgba(212,175,55,.07);
+  border-color: rgba(212,175,55,.5);
+}
+.modal-pdf-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+.modal-pdf-info {
+  display: flex;
+  flex-direction: column;
+  gap: .1rem;
+  flex: 1;
+  min-width: 0;
+}
+.modal-pdf-title {
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--clr-text, #e8e0cc);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.modal-pdf-meta {
+  font-size: .68rem;
+  color: var(--clr-muted, #888);
+  font-family: var(--font-mono, 'DM Mono', monospace);
+}
+.modal-pdf-arrow {
+  font-size: 1.1rem;
+  color: var(--clr-gold, #d4af37);
+  flex-shrink: 0;
+}
